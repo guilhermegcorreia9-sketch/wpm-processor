@@ -10,6 +10,12 @@
 
 Plugin desenvolvido no âmbito do Programa BiomasBR-INPE. 
 
+## Referência
+
+Fonseca, L. M. G., Prasad, G. S. S. D., & Mascarenhas, N. D. A. (2004).
+Combined interpolation-restoration of Landsat images through FIR filter design techniques.
+International Journal of Remote Sensing, 25(14), 2735–2745.
+
 ## Licença
 
 Este projeto é distribuído sob a licença GNU General Public License v3.0.
