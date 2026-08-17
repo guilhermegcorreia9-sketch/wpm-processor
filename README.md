@@ -1,6 +1,6 @@
 # WPM 1-meter spatial resolution
 <p align="center">
-  <img src="icons/icon.png" alt="wpm" width="80"/>
+  <img src="icons/icon.png" alt="wpm" width="120"/>
 </p>
 
 <p align="center">
