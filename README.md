@@ -9,15 +9,15 @@
   <img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" />
 </p>
 
-O método TCLT (restauração, registro e PCA) foi desenvolvido por Emiliano Ferreira Castejon, enquanto sua implementação foi elaborada por Laércio Massaru Namikawa, em adaptação proposto por Fonseca et al. (1992). O plugin é uma ferramenta do QGIS destinada à geração de imagens do satélite CBERS-4A WPM a partir do SpatioTemporal Asset Catalog (STAC) do projeto Brazil Data Cube (INPE).
+O método TCLT (restauração, registro e PCA) foi desenvolvido por Emiliano Ferreira Castejon, enquanto sua implementação foi elaborada por Laércio Massaru Namikawa, em adaptação proposto por Fonseca et al. (1993). O plugin é uma ferramenta do QGIS destinada à geração de imagens do satélite CBERS-4A WPM a partir do SpatioTemporal Asset Catalog (STAC) do projeto Brazil Data Cube (INPE).
 
 Leia as instruções completas em [MANUAL.md](MANUAL.md).
 
 ## Referência
 
-Fonseca, L. M. G., Prasad, G. S. S. D., & Mascarenhas, N. D. A. (1992).
+Fonseca, L. M. G., Prasad, G. S. S. D., & Mascarenhas, N. D. A. (1993).
 Combined interpolation-restoration of Landsat images through FIR filter design techniques.
-Taylor & Francis Ltd, 2548–2549.
+International Journal of Remote Sensing, 14(13), 2547–2561.
 
 ## Licença
 
