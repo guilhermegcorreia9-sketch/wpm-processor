@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" />
 </p>
 
-Plugin desenvolvido no âmbito do Programa BiomasBR-INPE. 
+O Método TCLT (restauração, registro e PCA) foi desenvolvido por Laércio Massaru Namikawa, em adaptação a Fonseca et al. (2004). Enquanto o plugin é uma ferramenta para o QGIS para a geração de imagens do satélite CBERS-4A WPM a partir do SpatioTemporal Asset Catalog (STAC) do projeto Brazil Data Cube (INPE).
 
 ## Referência
 
