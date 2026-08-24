@@ -6,12 +6,19 @@
 <p align="center">
   <img src="https://img.shields.io/badge/license-GPL--3.0-blue" />
   <img src="https://img.shields.io/badge/platform-QGIS-brightgreen" /></a>
-  <img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" />
+  <img src="https://img.shields.io/badge/lifecycle-maturing-green.svg" />
 </p>
 
-O método implementado (registro, restauração e fusão) foi criado por Laércio Massaru Namikawa, que adaptou a metodologia de restauração de Fonseca et al. (1993), utilizando o software TerraLib Command-Line Tools (TCLT) de Emiliano Ferreira Castejon. O plugin é uma ferramenta destinada à geração de imagens do satélite CBERS-4A/WPM com resolução espacial de 1 metro – cuja fusão original possui 2 metros de resolução – a partir do SpatioTemporal Asset Catalog (STAC) do projeto Brazil Data Cube (INPE).
+O método de registro, restauração e fusão implementado por Laércio Massaru Namikawa, foi uma adaptação a metodologia de restauração de Fonseca et al. (1993), utilizando o software TerraLib Command-Line Tools (TCLT) de Emiliano Ferreira Castejon. O plugin é uma ferramenta destinada à geração de imagens do satélite CBERS-4A/WPM com resolução espacial de 1 metro – cuja fusão original possui 2 metros de resolução – a partir do SpatioTemporal Asset Catalog (STAC) do projeto Brazil Data Cube (INPE).
 
-Leia as instruções completas em [MANUAL.md](MANUAL.md).
+## Instalação das dependências
+
+Leia as instruções completas em [MANUAL.md](MANUAL.md). O plugin foi desenvolvido para a versão 3.44 do QGIS, instale as dependências via OSGeo4W:
+
+``` sh
+python -m pip install --upgrade pip
+python -m pip install geopandas rasterio requests
+```
 
 ## Referência
 
