@@ -1,12 +1,11 @@
 # WPM 1-meter spatial resolution
 <p align="center">
-  <img src="icons/icon.png" alt="wpm" width="120"/>
+  <img src="https://img.shields.io/badge/License-GPLv3-blue" />
+  <img src="https://img.shields.io/badge/Lifecycle-maturing-green.svg" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/license-GPL--3.0-blue" />
-  <img src="https://img.shields.io/badge/platform-QGIS-brightgreen" /></a>
-  <img src="https://img.shields.io/badge/lifecycle-maturing-green.svg" />
+  <img src="icons/icon.png" alt="wpm" width="200"/>
 </p>
 
 O método de registro, restauração e fusão implementado por Laércio Massaru Namikawa foi uma adaptação à metodologia de restauração de Fonseca et al. (1993), utilizando o software TerraLib Command-Line Tools (TCLT), de Emiliano Ferreira Castejon. O plugin é uma ferramenta destinada à geração de imagens do satélite CBERS-4A/WPM com resolução espacial de 1 metro – cuja fusão original possui 2 metros de resolução – a partir do SpatioTemporal Asset Catalog (STAC) do projeto Brazil Data Cube (INPE).
