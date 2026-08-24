@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/lifecycle-maturing-green.svg" />
 </p>
 
-O método de registro, restauração e fusão implementado por Laércio Massaru Namikawa, foi uma adaptação a metodologia de restauração de Fonseca et al. (1993), utilizando o software TerraLib Command-Line Tools (TCLT) de Emiliano Ferreira Castejon. O plugin é uma ferramenta destinada à geração de imagens do satélite CBERS-4A/WPM com resolução espacial de 1 metro – cuja fusão original possui 2 metros de resolução – a partir do SpatioTemporal Asset Catalog (STAC) do projeto Brazil Data Cube (INPE).
+O método de registro, restauração e fusão implementado por Laércio Massaru Namikawa foi uma adaptação à metodologia de restauração de Fonseca et al. (1993), utilizando o software TerraLib Command-Line Tools (TCLT), de Emiliano Ferreira Castejon. O plugin é uma ferramenta destinada à geração de imagens do satélite CBERS-4A/WPM com resolução espacial de 1 metro – cuja fusão original possui 2 metros de resolução – a partir do SpatioTemporal Asset Catalog (STAC) do projeto Brazil Data Cube (INPE).
 
 ## Instalação das dependências
 
