@@ -130,9 +130,13 @@ Se nenhuma cena for encontrada, tente uma data diferente ou revise/amplie a áre
 
 ## 5. Exemplos
 
-<img width="1025" height="881" alt="image" src="https://github.com/user-attachments/assets/c1ab8baa-f968-4104-ba08-60a64c113a50" />
+<img width="1062" height="836" alt="image" src="https://github.com/user-attachments/assets/d9f9565f-7390-4e9c-a6b5-fb8c1148424f" />
 
-<img width="1469" height="882" alt="image" src="https://github.com/user-attachments/assets/b3f1288d-c4f6-4014-a3cf-b8f78b530c8a" />
+Brasília 1:50.000
+
+<img width="1617" height="836" alt="image" src="https://github.com/user-attachments/assets/e7855add-ed12-45a9-9077-7689c371c121" />
+
+Brasília 1:5.000
 
 ---
 
