@@ -11,7 +11,7 @@ Plugin QGIS para geração de imagens do satélite **CBERS-4A/WPM** com resoluç
 
 ## Requisitos
 
-1. **QGIS** entre as versões **3.34 e 3.99**.
+1. **QGIS** versão **3.44**.
 2. **Windows** — o pipeline chama um executável (`.exe`) por meio de um script `.bat`, portanto o plugin depende de ambiente Windows.
 3. **Conexão com a internet**, para consultar o catálogo STAC do BDC (`https://data.inpe.br/bdc/stac/v1/`, coleção `CB4A-WPM-L4-DN-1`) e baixar as cenas/miniaturas.
 4. **Executável TCLT** (`tclt_exe.exe`), responsável pelo registro, restauração e fusão das bandas. Ele **não está incluso no pacote do plugin** e precisa ser obtido separadamente junto à equipe do INPE.
@@ -77,6 +77,8 @@ A janela do plugin é dividida em 4 abas: **ROI**, **Processamento**, **Produto 
 
 ### 3.1. Aba "ROI" — definir a área de interesse
 
+<img width="754" height="686" alt="image" src="https://github.com/user-attachments/assets/24219c8f-8adc-40ec-87b0-09298b6ea553" />
+
 Escolha uma das duas origens da área de interesse:
 
 - **Arquivo vetorial (Shapefile / GeoPackage):** selecione um arquivo `.shp` ou `.gpkg` contendo o polígono da área desejada.
@@ -85,6 +87,8 @@ Escolha uma das duas origens da área de interesse:
 **Importante:** preencha apenas uma das duas opções.
 
 ### 3.2. Aba "Processamento" — buscar e selecionar cenas
+
+<img width="824" height="684" alt="image" src="https://github.com/user-attachments/assets/e8c69137-f957-4ae6-8d36-60c056995725" />
 
 1. Informe a **Data aproximada** desejada para a imagem.
 2. Clique em **"🔍 Buscar imagens disponíveis"**. O plugin consulta o STAC do BDC dentro de uma janela de ±60 dias em torno da data informada, considerando o ROI definido na aba anterior.
@@ -99,6 +103,8 @@ Se nenhuma cena for encontrada, tente uma data diferente ou revise/amplie a áre
 
 ### 3.3. Aba "Produto Final" — configurar a saída
 
+<img width="824" height="685" alt="image" src="https://github.com/user-attachments/assets/f67241c9-1e54-4406-bd12-b24c9b5fe2b2" />
+
 1. Marque os produtos que deseja gerar:
    - **Visualização RGB** (PCA / fusão pancromática) — 8 bits.
    - **Banda Bruta NGB** (NIR / Green / Blue) — 16 bits.
@@ -112,6 +118,8 @@ Se nenhuma cena for encontrada, tente uma data diferente ou revise/amplie a áre
 
 ### 3.4. Aba "Execução" — rodar o processamento
 
+<img width="824" height="668" alt="image" src="https://github.com/user-attachments/assets/3e3de8e9-d605-42de-910c-8a97f8b7befa" />
+
 1. Clique em **"▶ Executar processamento"**.
 2. Acompanhe o andamento pelo log exibido nesta aba. É possível **cancelar** o processamento em andamento pelo botão **"Cancelar"**.
 3. Ao concluir com sucesso, os produtos gerados são carregados automaticamente como camadas no painel de Camadas do QGIS, e uma mensagem indica a pasta e a quantidade de arquivos gerados.
@@ -120,7 +128,15 @@ Se nenhuma cena for encontrada, tente uma data diferente ou revise/amplie a áre
 
 ---
 
-## 4. Solução de Problemas
+## 5. Exemplos
+
+<img width="1025" height="881" alt="image" src="https://github.com/user-attachments/assets/c1ab8baa-f968-4104-ba08-60a64c113a50" />
+
+<img width="1469" height="882" alt="image" src="https://github.com/user-attachments/assets/b3f1288d-c4f6-4014-a3cf-b8f78b530c8a" />
+
+---
+
+## 5. Solução de Problemas
 
 - **"Não foi possível localizar um interpretador Python válido nesta instalação do QGIS"** — ocorre quando o QGIS foi instalado de uma forma em que o Python vem embutido no próprio executável do QGIS (`qgis-bin.exe`), sem um `python.exe`/`python3.exe` separado. Solução: instale o QGIS via **OSGeo4W** (que inclui um interpretador Python separado) ou localize um `python.exe` válido na pasta de instalação do QGIS (ex.: `.../apps/Python3XX/`).
 - **Erro do TCLT relacionado a "tie-points"** — normalmente indica falta de contraste/pontos de controle entre as bandas. O plugin já tenta relaxar automaticamente o parâmetro de correlação algumas vezes antes de desistir; se o erro persistir, tente outra cena ou revise a área de interesse.
@@ -129,7 +145,7 @@ Se nenhuma cena for encontrada, tente uma data diferente ou revise/amplie a áre
 
 ---
 
-## 5. Referências
+## 6. Referências
 
 - Catálogo STAC do Brazil Data Cube: `https://data.inpe.br/bdc/stac/v1/` (coleção `CB4A-WPM-L4-DN-1`)
 - Repositório do plugin: https://github.com/migualex/cbers-wpm-1m
