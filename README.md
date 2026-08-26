@@ -2,6 +2,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/License-GPLv3-blue" />
   <img src="https://img.shields.io/badge/Lifecycle-maturing-green.svg" />
+  <img src="https://img.shields.io/badge/Python-3.11.9-3776AB?logo=python&logoColor=white" />
 </p>
 
 <img src="icons/icon.png" alt="wpm" align="right" height="200" width="200"/>
