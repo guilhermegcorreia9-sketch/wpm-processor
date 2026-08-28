@@ -52,7 +52,7 @@ from .tasks import CbersWpmTask, CbersWpmSearchTask
 from .core.pipeline import fetch_thumbnail_bytes
 
 FIXED_THREADS = 1
-FIXED_CONTRAST_STRETCH = 600
+FIXED_CONTRAST_STRETCH = 800
 FIXED_SEARCH_WINDOW_DAYS = 60
 
 POINT_BUFFER_MIN_KM = 10
