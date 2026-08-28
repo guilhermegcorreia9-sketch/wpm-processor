@@ -257,7 +257,7 @@ def run_pipeline(params, log=print, should_cancel=None):
     STAC_ITEMS        = params.get("stac_items")
     TCLT_EXE          = params["tclt_exe"]
     FINAL_OUTPUT_DIR  = params["final_output_dir"]
-    CONTRAST_STRETCH  = params.get("contrast_stretch", 600)
+    CONTRAST_STRETCH  = params.get("contrast_stretch", 800)
     THREADS           = params.get("threads", 10)
     OUTPUT_CRS        = params.get("output_crs")
     OUTPUT_FORMAT     = params.get("output_format", "JP2")
@@ -875,7 +875,7 @@ def run_pipeline(params, log=print, should_cancel=None):
           VERTICE_END
 
           VERTICE_START
-            VERTICE_NAME "SQUARE_ROOT600_ContrastRGB_Vertice"
+            VERTICE_NAME "SQUARE_ROOT800_ContrastRGB_Vertice"
             VERTICE_TYPE "CONTRAST"
             VERTICE_CONNECTION "Recomposed_RGBimage_vertice" "INPUT_RASTER"
             VERTICE_PARAM "BANDS_INDEXES" "0;1;2"
@@ -887,9 +887,9 @@ def run_pipeline(params, log=print, should_cancel=None):
           VERTICE_END
 
           VERTICE_START
-            VERTICE_NAME "NODATA_Linear_Contrast600_RGB_VERTICE"
+            VERTICE_NAME "NODATA_SQUARE_ROOT800_ContrastRGB_Vertice"
             VERTICE_TYPE "RASTERTRANSFORM"
-            VERTICE_CONNECTION "SQUARE_ROOT600_ContrastRGB_Vertice" "INPUT_RASTER"
+            VERTICE_CONNECTION "SQUARE_ROOT800_ContrastRGB_Vertice" "INPUT_RASTER"
             VERTICE_PARAM "BANDS_INDEXES" "0;1;2"
             VERTICE_PARAM "OPERATIONS" "NODATA_OP_TYPE"
             VERTICE_PARAM "OLD_NODATA_VALUE" "-10000"
@@ -898,14 +898,14 @@ def run_pipeline(params, log=print, should_cancel=None):
           VERTICE_END
 
           VERTICE_START
-            VERTICE_NAME "Linear_Contrast600_RGB_Vertice"
+            VERTICE_NAME "Linear_Contrast800_RGB_Vertice"
             VERTICE_TYPE "CONTRAST"
-            VERTICE_CONNECTION "NODATA_Linear_Contrast600_RGB_VERTICE" "INPUT_RASTER"
+            VERTICE_CONNECTION "NODATA_SQUARE_ROOT800_ContrastRGB_Vertice" "INPUT_RASTER"
             VERTICE_PARAM "BANDS_INDEXES" "0;1;2"
             VERTICE_PARAM "CONTRAST_TYPE" "LINEAR"
             VERTICE_PARAM "OUT_RANGE_MIN" "1"
             VERTICE_PARAM "OUT_RANGE_MAX" "255"
-            VERTICE_PARAM "LC_MIN_INPUT" "100;100;100"
+            VERTICE_PARAM "LC_MIN_INPUT" "1;1;1"
             VERTICE_PARAM "LC_MAX_INPUT" "1023;1023;1023"
           VERTICE_END
 
@@ -1021,9 +1021,9 @@ def run_pipeline(params, log=print, should_cancel=None):
             raise PipelineError("Não foi possível localizar o raster de fusão (FUSION_Vertice) "
                                  "que o TCLT deveria ter produzido - verifique o log acima.")
 
-        rgb_path = find_vertice_output("Linear_Contrast600_RGB_Vertice")
+        rgb_path = find_vertice_output(f"Linear_Contrast{CONTRAST_STRETCH}_RGB_Vertice")
         if rgb_path is None:
-            raise PipelineError("Não foi possível localizar o raster RGB final (Linear_Contrast600_RGB_Vertice) "
+            raise PipelineError(f"Não foi possível localizar o raster RGB final (Linear_Contrast{CONTRAST_STRETCH}_RGB_Vertice) "
                                  "que o TCLT deveria ter produzido - verifique o log acima.")
 
         with rasterio.open(pca_path) as src:
@@ -1089,7 +1089,7 @@ def run_pipeline(params, log=print, should_cancel=None):
                         scaled = np.zeros_like(band)
                     out = np.clip(np.round(scaled), 0, 255).astype('uint8')
                     log(f"  Nota: a banda {b + 1} foi reescalada linearmente de [{vmin:.2f}, {vmax:.2f}] para [0, 255] para compressão em uint8.")
-                if nodata is not None:
+                if nodata is None:
                     out[~valid] = 0
                 out_bands.append(out)
             return np.stack(out_bands)
@@ -1100,8 +1100,8 @@ def run_pipeline(params, log=print, should_cancel=None):
                 band = data[b].astype('float64')
                 valid = (band != nodata) if nodata is not None else np.ones_like(band, dtype=bool)
                 out = np.clip(np.round(band), -32768, 32767).astype('int16')
-                if nodata is not None:
-                    out[~valid] = 0
+                if nodata is None:
+                    out[~valid] = -10000
                 out_bands.append(out)
             return np.stack(out_bands)
 
