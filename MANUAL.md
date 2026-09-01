@@ -44,7 +44,7 @@ Alternativamente, é possível instalar manualmente:
 
 ### 2. Preparar o executável TCLT
 
-Antes de executar o processamento, baixe o arquivo TCLT disponível na pasta [auxiliary](https://github.com/migualex/cbers-wpm-1m/tree/main/auxiliary). Descompacte o arquivo e salve o `tclt_exe.exe` em um local acessível no seu computador (ex.: `C:\TCLT\tclt_exe.exe`). O caminho para esse arquivo será informado dentro do plugin, na aba **Processamento** (passo 3.2).
+Antes de executar o processamento, baixe o arquivo TCLT disponível na pasta [auxiliary](https://github.com/migualex/cbers-wpm-1m/tree/main/auxiliary). Descompacte o arquivo e salve o `tclt.exe` em um local acessível no computador (ex: `C:\TCLT\tclt.exe`). O caminho para esse arquivo será informado dentro do plugin, na aba Processamento (passo 3.2).
 
 ### 3. Como Usar
 
