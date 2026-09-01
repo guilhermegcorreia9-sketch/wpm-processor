@@ -20,6 +20,8 @@ python -m pip install --upgrade pip
 python -m pip install geopandas rasterio requests
 ```
 
+Antes de executar o processamento, baixe o arquivo TCLT disponível na pasta [auxiliary](https://github.com/migualex/cbers-wpm-1m/tree/main/auxiliary). Descompacte o arquivo e salve o `tclt.exe` em um local acessível no computador (ex: `C:\TCLT\tclt.exe`). O caminho para esse arquivo será informado dentro do plugin, na aba Processamento (passo 3.2).
+
 ## Referência
 
 Fonseca, L. M. G., Prasad, G. S. S. D., & Mascarenhas, N. D. A. (1993).
